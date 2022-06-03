@@ -1,7 +1,7 @@
 ---
 import MenuIcon from "./icons/MenuIcon.astro";
 import XIcon from "./icons/XIcon.astro";
-import ContactForm from "./ContactForm.jsx";
+import ContactForm from "./ContactForm";
 ---
 
 <div id="openButton" class="button">
@@ -62,6 +62,9 @@ import ContactForm from "./ContactForm.jsx";
         right: 0;
         width: 50%;
         height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 4px;
         background-color: white;
         transition: 0.5s ease-in-out;
     }
