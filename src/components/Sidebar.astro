@@ -17,12 +17,12 @@ import ContactForm from "./ContactForm.jsx";
 <script>
     function openSidebar() {
         const el = document.getElementById("sidebar");
-        el.style.width = "50%";
+        el.style.right = "0%";
         el.style.visibility = "visible";
     }
     function closeSidebar() {
         const el = document.getElementById("sidebar");
-        el.style.width = "0%";
+        el.style.right = "-50%";
         el.style.visibility = "hidden";
     }
     document.getElementById("openButton").addEventListener("click", () => {
@@ -58,12 +58,12 @@ import ContactForm from "./ContactForm.jsx";
 
     div#sidebar {
         position: fixed;
-        right: 0;
+        right: -50%;
         top: 0;
-        width: 0%;
+        width: 50%;
         height: 100vh;
         background-color: white;
-        transition: 0.5s;
+        transition: 0.5s ease-in-out;
         visibility: hidden;
     }
 </style>
