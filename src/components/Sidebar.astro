@@ -1,7 +1,7 @@
 ---
 import MenuIcon from "./icons/MenuIcon.astro";
 import XIcon from "./icons/XIcon.astro";
-
+import ContactForm from "./ContactForm.jsx";
 ---
 
 <div id="openButton" class="button">
@@ -11,6 +11,7 @@ import XIcon from "./icons/XIcon.astro";
     <div id="closeButton" class="button">
         <XIcon/>
     </div>
+    <ContactForm client:visible/>
 </div>
 
 <script>
