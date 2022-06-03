@@ -7,7 +7,7 @@ import ContactForm from "./ContactForm";
 <div id="openButton" class="button">
     <MenuIcon/>
 </div>
-<div id="sidebar">
+<div id="sidebar" class="closed">
     <div id="closeButton" class="button">
         <XIcon/>
     </div>
@@ -17,13 +17,13 @@ import ContactForm from "./ContactForm";
 <script>
     function openSidebar() {
         const el = document.getElementById("sidebar");
-        el.style.right = "0%";
-        el.style.visibility = "visible";
+        el.classList.add("open");
+        el.classList.remove("closed");
     }
     function closeSidebar() {
         const el = document.getElementById("sidebar");
-        el.style.right = "-50%";
-        el.style.visibility = "hidden";
+        el.classList.add("closed");
+        el.classList.remove("open");
     }
     document.getElementById("openButton").addEventListener("click", () => {
         openSidebar();
@@ -59,29 +59,31 @@ import ContactForm from "./ContactForm";
     div#sidebar {
         position: fixed;   
         top: 0;
-        right: 0;
+        right: -50%;
         width: 50%;
         height: 100vh;
         display: flex;
         flex-direction: column;
         padding: 4px;
         background-color: white;
-        transition: 0.5s ease-in-out;
+        transition: right 0.25s ease-in-out;
+    }
+
+    div#sidebar.open {
+        right: 0%;
+    }
+
+    div#sidebar.closed {
+        right: -50%;
     }
 
     @media only screen and (max-width: 480px) {
         div#sidebar {
             width: 100%;
         }
-    }
 
-    div#sidebar.open {
-        right: 0%;
-        visibility: visible;
-    }
-
-    div#sidebar.closed {
-        right: -50%;
-        visibility: hidden;
+        div#sidebar.closed {
+            right: -100%;
+        }
     }
 </style>
